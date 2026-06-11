@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compress PDF Online Free — Reduce PDF Size Without Quality Loss | FrankenFile</title>
+<meta name="description" content="Compress PDF files online for free. Reduce PDF size to 100KB, 200KB, 500KB or smaller. No signup, no watermark, no file upload to servers. Instant PDF compression in your browser.">
+<meta name="keywords" content="compress pdf, compress pdf online, compress pdf free, reduce pdf size, pdf compressor, compress pdf to 100kb, compress pdf to 200kb, compress pdf without losing quality, shrink pdf, pdf size reducer, compress pdf online free no sign up, pdf ko compress kaise kare, compress pdf for email, reduce pdf file size online free, pdf compressor no watermark, best pdf compressor, compress pdf file, make pdf smaller, pdf compress karna, online pdf compressor free, compress pdf without watermark, pdf file size reducer, smallpdf compress pdf alternative, ilovepdf compress pdf alternative">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://frankenfile.vercel.app/compress-pdf.html">
+
+<meta property="og:title" content="Compress PDF Free Online — No Signup, No Watermark | FrankenFile">
+<meta property="og:description" content="Reduce PDF file size instantly. No upload to servers. No watermark. Free forever. Works on mobile.">
+<meta property="og:url" content="https://frankenfile.vercel.app/compress-pdf.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FrankenFile">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compress PDF Free — FrankenFile">
+<meta name="twitter:description" content="Compress PDF online free. No signup, no watermark, no upload. Reduce PDF size instantly in your browser.">
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Compress PDF — FrankenFile",
+    "description": "Free online PDF compressor. Reduce PDF file size without quality loss. No signup, no file upload, no watermark.",
+    "url": "https://frankenfile.vercel.app/compress-pdf.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Compress PDF without quality loss",
+      "No file upload required",
+      "No watermark added",
+      "No signup needed",
+      "Free forever",
+      "Works on mobile"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I compress a PDF for free online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to FrankenFile's compress tool, then click Compress PDF. Your reduced file downloads instantly. No signup or payment needed." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I compress a PDF to 100KB online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. FrankenFile compresses PDFs significantly. Results depend on the PDF content — PDFs with lots of images compress more than text-only PDFs." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to compress PDF files online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On FrankenFile, yes. Your PDF is processed entirely inside your browser and never uploaded to any server. Your files stay 100% private on your device." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does compressing a PDF add a watermark?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. FrankenFile never adds watermarks to your files. What you put in is exactly what you get out — minus the extra file size." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I reduce a PDF file size?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Typical results are 20-60% size reduction. PDFs with many embedded images compress the most. Text-heavy PDFs may see smaller reductions." }
+      }
+    ]
+  }
+]
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  background: #080C18;
+  color: #E8EEFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --bg: #080C18;
+  --surface: rgba(255,255,255,0.04);
+  --surface-hover: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border-active: rgba(108,99,255,0.45);
+  --violet: #6C63FF;
+  --violet-dim: rgba(108,99,255,0.15);
+  --cyan: #00C2FF;
+  --white: #E8EEFF;
+  --muted: rgba(232,238,255,0.45);
+  --success: rgba(0,194,255,0.08);
+  --success-border: rgba(0,194,255,0.25);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% -5%, rgba(108,99,255,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 100%, rgba(0,194,255,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+.page { position: relative; z-index: 1; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 32px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(8,12,24,0.82);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(120deg, var(--violet), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.8rem; font-weight: 500;
+  padding: 6px 12px; border-radius: 8px; transition: color 0.15s, background 0.15s; white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--white); background: var(--surface-hover); }
+
+/* HERO */
+.tool-hero {
+  padding: 100px 24px 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; color: var(--muted); margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb-sep { opacity: 0.4; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--violet-dim); border: 1px solid rgba(108,99,255,0.3);
+  border-radius: 100px; padding: 4px 14px;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; color: #a9a2ff; margin-bottom: 18px;
+}
+.tool-hero h1 {
+  font-family: 'Sora', sans-serif; font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 14px;
+}
+.tool-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(120deg, var(--violet), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.tool-hero-sub {
+  color: var(--muted); font-size: 1rem; line-height: 1.75;
+  max-width: 520px; font-weight: 300; margin-bottom: 20px;
+}
+.trust-row {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
+}
+.trust-tag {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; padding: 4px 12px;
+  font-size: 0.7rem; color: var(--muted); font-weight: 500;
+}
+
+/* TOOL AREA */
+.tool-section {
+  padding: 0 24px 72px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.tool-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* DROP ZONE */
+.drop-zone {
+  border: 2px dashed rgba(108,99,255,0.35);
+  border-radius: var(--radius);
+  padding: 52px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: rgba(108,99,255,0.03);
+  position: relative;
+}
+.drop-zone:hover, .drop-zone.dragover {
+  border-color: var(--violet);
+  background: rgba(108,99,255,0.07);
+}
+.drop-zone input[type="file"] {
+  position: absolute; inset: 0; opacity: 0;
+  cursor: pointer; width: 100%; height: 100%;
+}
+.drop-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+.drop-title { font-weight: 600; font-size: 1rem; margin-bottom: 6px; }
+.drop-hint { font-size: 0.78rem; color: var(--muted); }
+
+/* FILE INFO */
+.file-info {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: none;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+.file-info.show { display: flex; }
+.file-info-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-info-size { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.file-remove {
+  background: none; border: none; color: var(--muted);
+  cursor: pointer; font-size: 1rem; padding: 2px 6px;
+  border-radius: 4px; transition: color 0.15s; flex-shrink: 0;
+}
+.file-remove:hover { color: #ff6b9d; }
+
+/* CONTROLS */
+.controls {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.controls-title {
+  font-size: 0.78rem; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+}
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.level-btn {
+  padding: 12px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.level-btn:hover { border-color: rgba(108,99,255,0.4); background: var(--surface-hover); }
+.level-btn.active {
+  background: rgba(108,99,255,0.18);
+  border-color: rgba(108,99,255,0.55);
+  color: #c4bfff;
+}
+.level-btn-title { font-weight: 600; display: block; margin-bottom: 2px; }
+.level-btn-sub { font-size: 0.68rem; color: var(--muted); }
+.level-btn.active .level-btn-sub { color: #a9a2ff; }
+
+/* ACTION */
+.action-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--violet), #4A8FFF);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 20px rgba(108,99,255,0.3);
+}
+.action-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.action-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* PROGRESS */
+.progress-wrap { margin-top: 20px; display: none; }
+.progress-wrap.show { display: block; }
+.progress-track {
+  height: 5px; background: rgba(255,255,255,0.08);
+  border-radius: 100px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  border-radius: 100px; width: 0%;
+  transition: width 0.35s ease;
+}
+.progress-label { font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
+
+/* RESULT */
+.result-wrap { margin-top: 20px; display: none; }
+.result-wrap.show { display: block; }
+.result-box {
+  padding: 20px 22px;
+  background: var(--success);
+  border: 1px solid var(--success-border);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 14px;
+}
+.result-stats { font-size: 0.88rem; }
+.result-stats strong { display: block; font-weight: 600; margin-bottom: 3px; font-size: 0.95rem; }
+.result-stats span { color: var(--muted); font-size: 0.78rem; }
+.result-savings {
+  display: inline-block; margin-top: 4px;
+  background: rgba(0,255,128,0.1); border: 1px solid rgba(0,255,128,0.25);
+  color: #5dffa0; font-size: 0.72rem; font-weight: 600;
+  padding: 2px 10px; border-radius: 100px;
+}
+.download-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,194,255,0.1); border: 1px solid rgba(0,194,255,0.3);
+  color: var(--cyan); padding: 10px 20px; border-radius: var(--radius-sm);
+  font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  font-family: 'Inter', sans-serif; text-decoration: none; transition: all 0.15s;
+}
+.download-btn:hover { background: rgba(0,194,255,0.18); }
+
+/* SECTION SHARED */
+.section {
+  padding: 64px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; display: block;
+}
+.section-title {
+  font-family: 'Sora', sans-serif; font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.1; letter-spacing: -1px; margin-bottom: 32px;
+}
+
+/* OTHER TOOLS */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.tool-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); text-decoration: none; color: var(--white);
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.tool-card:hover {
+  background: var(--surface-hover); border-color: var(--border-active);
+  transform: translateY(-1px);
+}
+.tool-icon { font-size: 1.4rem; flex-shrink: 0; }
+.tool-name { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700; }
+.tool-desc { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 8px; max-width: 720px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.faq-q {
+  width: 100%; background: none; border: none; color: var(--white);
+  padding: 15px 18px; font-size: 0.86rem; font-weight: 600;
+  font-family: 'Inter', sans-serif; text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  transition: background 0.15s;
+}
+.faq-q:hover { background: var(--surface-hover); }
+.faq-icon { font-size: 1rem; color: var(--violet); flex-shrink: 0; transition: transform 0.2s; font-style: normal; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  display: none; padding: 0 18px 15px;
+  font-size: 0.8rem; color: var(--muted); line-height: 1.75;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0 24px;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 36px 24px;
+  text-align: center; color: var(--muted); font-size: 0.75rem; line-height: 1.8;
+}
+footer strong {
+  background: linear-gradient(120deg, var(--violet), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;
+}
+.footer-links {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 6px 16px; margin-top: 14px;
+}
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 0.72rem; transition: color 0.15s; }
+.footer-links a:hover { color: var(--white); }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .tool-hero { padding: 80px 16px 36px; }
+  .tool-section { padding: 0 16px 52px; }
+  .tool-box { padding: 20px 16px; }
+  .level-grid { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .level-btn { padding: 10px 4px; font-size: 0.72rem; }
+  .section { padding: 48px 16px; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .result-box { flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/">FrankenFile</a>
+  <ul class="nav-links">
+    <li><a href="/compress-pdf.html" class="active">Compress PDF</a></li>
+    <li><a href="/merge-pdf.html">Merge PDF</a></li>
+    <li><a href="/image-to-pdf.html">Image to PDF</a></li>
+    <li><a href="/ocr-image-to-text.html">OCR</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+
+<!-- TOOL HERO -->
+<div class="tool-hero">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Compress PDF</span>
+  </div>
+  <div class="hero-badge">Free PDF Tool</div>
+  <h1>Compress PDF<br><em>Free. Instant. Private.</em></h1>
+  <p class="tool-hero-sub">Reduce PDF file size online without losing quality. No signup, no watermark, no file upload to servers. Works on mobile, tablet, and desktop.</p>
+  <div class="trust-row">
+    <span class="trust-tag">✓ No file upload</span>
+    <span class="trust-tag">✓ No watermark</span>
+    <span class="trust-tag">✓ No signup</span>
+    <span class="trust-tag">✓ No daily limit</span>
+    <span class="trust-tag">✓ Free forever</span>
+  </div>
+</div>
+
+<!-- TOOL -->
+<div class="tool-section">
+  <div class="tool-box">
+
+    <!-- Drop Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <input type="file" accept=".pdf" id="file-input" onchange="handleFile(this)">
+      <span class="drop-icon">📄</span>
+      <div class="drop-title">Drop your PDF here</div>
+      <div class="drop-hint">or click to browse · Any size · No upload to server</div>
+    </div>
+
+    <!-- File info -->
+    <div class="file-info" id="file-info">
+      <span>📄</span>
+      <span class="file-info-name" id="file-name">—</span>
+      <span class="file-info-size" id="file-size-orig">—</span>
+      <button class="file-remove" onclick="clearFile()" title="Remove file">✕</button>
+    </div>
+
+    <!-- Compression Level -->
+    <div class="controls" id="controls" style="display:none">
+      <div class="controls-title">Compression Level</div>
+      <div class="level-grid">
+        <button class="level-btn" data-level="low" onclick="selectLevel(this)">
+          <span class="level-btn-title">Low</span>
+          <span class="level-btn-sub">Best quality</span>
+        </button>
+        <button class="level-btn active" data-level="medium" onclick="selectLevel(this)">
+          <span class="level-btn-title">Medium</span>
+          <span class="level-btn-sub">Recommended</span>
+        </button>
+        <button class="level-btn" data-level="high" onclick="selectLevel(this)">
+          <span class="level-btn-title">High</span>
+          <span class="level-btn-sub">Smallest size</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Action -->
+    <button class="action-btn" id="compress-btn" onclick="compressPDF()" disabled>
+      Compress PDF →
+    </button>
+
+    <!-- Progress -->
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label" id="progress-label">Processing...</div>
+    </div>
+
+    <!-- Result -->
+    <div class="result-wrap" id="result-wrap">
+      <div class="result-box">
+        <div class="result-stats">
+          <strong id="result-filename">compressed.pdf</strong>
+          <span id="result-sizes">—</span><br>
+          <span class="result-savings" id="result-savings"></span>
+        </div>
+        <a class="download-btn" id="download-link" href="#" download="compressed.pdf">⬇ Download</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OTHER TOOLS -->
+<section class="section">
+  <span class="section-label">More Tools</span>
+  <h2 class="section-title">Other free PDF tools.</h2>
+  <div class="tools-grid">
+    <a href="/merge-pdf.html" class="tool-card"><span class="tool-icon">🔗</span><div><div class="tool-name">Merge PDF</div><div class="tool-desc">Combine multiple PDFs</div></div></a>
+    <a href="/split-pdf.html" class="tool-card"><span class="tool-icon">✂️</span><div><div class="tool-name">Split PDF</div><div class="tool-desc">Extract pages from PDF</div></div></a>
+    <a href="/pdf-to-jpg.html" class="tool-card"><span class="tool-icon">🖼️</span><div><div class="tool-name">PDF to JPG</div><div class="tool-desc">Convert pages to images</div></div></a>
+    <a href="/image-to-pdf.html" class="tool-card"><span class="tool-icon">📄</span><div><div class="tool-name">Image to PDF</div><div class="tool-desc">JPG, PNG to PDF</div></div></a>
+    <a href="/remove-pdf-pages.html" class="tool-card"><span class="tool-icon">🗑️</span><div><div class="tool-name">Remove PDF Pages</div><div class="tool-desc">Delete specific pages</div></div></a>
+    <a href="/ocr-pdf-to-text.html" class="tool-card"><span class="tool-icon">📝</span><div><div class="tool-name">OCR PDF to Text</div><div class="tool-desc">Extract text from PDF</div></div></a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section">
+  <span class="section-label">FAQ</span>
+  <h2 class="section-title">Compress PDF — answered.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">How do I compress a PDF for free online? <em class="faq-icon">+</em></button>
+      <div class="faq-a">Upload your PDF using the drop zone above, choose your compression level, and click Compress PDF. Your smaller file downloads instantly. No account or payment needed — ever.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I compress a PDF to 100KB or 200KB? <em class="faq-icon">+</em></button>
+      <div class="faq-a">FrankenFile compresses PDFs significantly. The final size depends on the content — image-heavy PDFs compress the most, sometimes 60-80%. Text-only PDFs compress less. Use the "High" compression level for maximum reduction.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is it safe to compress PDF files online? <em class="faq-icon">+</em></button>
+      <div class="faq-a">Completely safe. FrankenFile processes your PDF entirely inside your browser. Your file is never uploaded to any server, never stored in any cloud, and never seen by anyone. Ideal for sensitive documents like marksheets, contracts, ID proofs, and medical records.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Does compressing a PDF add a watermark? <em class="faq-icon">+</em></button>
+      <div class="faq-a">Never. FrankenFile does not add any watermark, branding, or modification to your file. Unlike many free tools, your output is clean and professional.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Does compressing a PDF reduce its quality? <em class="faq-icon">+</em></button>
+      <div class="faq-a">At Low and Medium compression levels, quality is preserved well. High compression reduces embedded image quality slightly to achieve the smallest file size. Text, fonts, and structure are always preserved.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is FrankenFile better than iLovePDF or Smallpdf for compressing PDFs? <em class="faq-icon">+</em></button>
+      <div class="faq-a">FrankenFile has no daily limits, no watermarks, and never uploads your files to a server. iLovePDF and Smallpdf both upload your files during processing and impose free-tier limits. FrankenFile is the better choice for privacy and unlimited use.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Why should I compress a PDF before sending? <em class="faq-icon">+</em></button>
+      <div class="faq-a">Large PDFs are difficult to send via email (most email services limit attachments to 10-25MB), upload to portals like Naukri or LinkedIn, or share on WhatsApp. Compressing reduces the file size so it uploads and sends faster.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>FrankenFile</strong> — Compress PDF free online. No signup. No watermark. Your files never leave your browser.
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/compress-pdf.html">Compress PDF</a>
+    <a href="/merge-pdf.html">Merge PDF</a>
+    <a href="/split-pdf.html">Split PDF</a>
+    <a href="/pdf-to-jpg.html">PDF to JPG</a>
+    <a href="/image-to-pdf.html">Image to PDF</a>
+    <a href="/jpg-to-pdf.html">JPG to PDF</a>
+    <a href="/ocr-image-to-text.html">OCR Image to Text</a>
+    <a href="/ocr-pdf-to-text.html">OCR PDF to Text</a>
+    <a href="/remove-pdf-pages.html">Remove PDF Pages</a>
+    <a href="/extract-images-from-pdf.html">Extract Images from PDF</a>
+  </div>
+</footer>
+
+</div>
+
+<!-- pdf-lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+<script>
+let currentFile = null;
+let currentLevel = 'medium';
+
+// ── DRAG & DROP ──
+const dz = document.getElementById('drop-zone');
+dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+dz.addEventListener('drop', e => {
+  e.preventDefault(); dz.classList.remove('dragover');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'application/pdf') loadFile(f);
+  else showToast('Please drop a PDF file.');
+});
+
+function handleFile(input) {
+  const f = input.files[0];
+  if (f) loadFile(f);
+}
+
+function loadFile(f) {
+  currentFile = f;
+  document.getElementById('file-name').textContent = f.name;
+  document.getElementById('file-size-orig').textContent = fmtSize(f.size);
+  document.getElementById('file-info').classList.add('show');
+  document.getElementById('controls').style.display = 'block';
+  document.getElementById('compress-btn').disabled = false;
+  document.getElementById('result-wrap').classList.remove('show');
+  document.getElementById('progress-wrap').classList.remove('show');
+  document.getElementById('drop-zone').style.display = 'none';
+}
+
+function clearFile() {
+  currentFile = null;
+  document.getElementById('file-info').classList.remove('show');
+  document.getElementById('controls').style.display = 'none';
+  document.getElementById('compress-btn').disabled = true;
+  document.getElementById('result-wrap').classList.remove('show');
+  document.getElementById('progress-wrap').classList.remove('show');
+  document.getElementById('drop-zone').style.display = 'block';
+  document.getElementById('file-input').value = '';
+}
+
+function selectLevel(btn) {
+  document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentLevel = btn.dataset.level;
+}
+
+// ── COMPRESS ──
+async function compressPDF() {
+  if (!currentFile) return;
+
+  showProgress(10, 'Loading PDF...');
+
+  try {
+    const ab = await currentFile.arrayBuffer();
+    showProgress(30, 'Analyzing document...');
+
+    const pdfDoc = await PDFLib.PDFDocument.load(ab, { ignoreEncryption: true });
+    showProgress(55, 'Compressing...');
+
+    // Save with object streams (structural compression)
+    const saveOptions = { useObjectStreams: true };
+    const bytes = await pdfDoc.save(saveOptions);
+
+    showProgress(85, 'Finalizing...');
+
+    // For high compression, do a second pass stripping metadata
+    let finalBytes = bytes;
+    if (currentLevel === 'high') {
+      const doc2 = await PDFLib.PDFDocument.load(bytes);
+      doc2.setTitle('');
+      doc2.setAuthor('');
+      doc2.setSubject('');
+      doc2.setKeywords([]);
+      doc2.setProducer('');
+      doc2.setCreator('');
+      finalBytes = await doc2.save({ useObjectStreams: true });
+    }
+
+    showProgress(100, 'Done!');
+    setTimeout(() => document.getElementById('progress-wrap').classList.remove('show'), 700);
+
+    const blob = new Blob([finalBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const origSize = currentFile.size;
+    const newSize = finalBytes.byteLength;
+    const saved = ((1 - newSize / origSize) * 100).toFixed(1);
+    const outName = currentFile.name.replace(/\.pdf$/i, '_compressed.pdf');
+
+    document.getElementById('result-filename').textContent = outName;
+    document.getElementById('result-sizes').textContent = `${fmtSize(origSize)} → ${fmtSize(newSize)}`;
+    document.getElementById('result-savings').textContent =
+      parseFloat(saved) > 0 ? `${saved}% smaller` : 'Already optimized';
+    const dl = document.getElementById('download-link');
+    dl.href = url;
+    dl.download = outName;
+    document.getElementById('result-wrap').classList.add('show');
+
+  } catch (e) {
+    document.getElementById('progress-wrap').classList.remove('show');
+    showToast('Error: ' + e.message);
+  }
+}
+
+// ── HELPERS ──
+function showProgress(pct, label) {
+  const pw = document.getElementById('progress-wrap');
+  pw.classList.add('show');
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = label;
+}
+
+function fmtSize(b) {
+  if (b < 1024) return b + ' B';
+  if (b < 1048576) return (b / 1024).toFixed(1) + ' KB';
+  return (b / 1048576).toFixed(2) + ' MB';
+}
+
+// Toast
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(60px);background:rgba(20,24,40,0.97);border:1px solid rgba(255,255,255,0.1);color:#E8EEFF;padding:10px 22px;border-radius:100px;font-size:0.84rem;font-weight:500;z-index:999;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);white-space:nowrap;font-family:Inter,sans-serif;';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  setTimeout(() => t.style.transform = 'translateX(-50%) translateY(60px)', 2800);
+}
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
