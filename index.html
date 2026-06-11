@@ -22,7 +22,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { overflow-x: hidden; }
 
   body {
     background: var(--navy);
@@ -111,9 +111,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10,15,30,0.95);
     border-bottom: 1px solid var(--glass-border);
   }
 
@@ -1230,6 +1228,12 @@ let selectedConvertFmt = 'jpeg';
 
 // ── NAV active ──
 const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+  });
+});
 const sections = document.querySelectorAll('section[id]');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
